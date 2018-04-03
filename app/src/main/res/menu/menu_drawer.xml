@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_1">
+
+        <item
+            android:icon="@drawable/ic_home"
+            android:id="@+id/menu_navi_home"
+            android:title="@string/navi_home">
+        </item>
+
+        <item
+            android:icon="@drawable/ic_account"
+            android:id="@+id/menu_navi_account"
+            android:title="@string/navi_account">
+        </item>
+
+        <item
+            android:icon="@drawable/ic_history"
+            android:id="@+id/menu_navi_history_work"
+            android:title="@string/navi_history_work"/>
+
+        <item
+            android:icon="@drawable/ic_map"
+            android:id="@+id/menu_navi_map"
+            android:title="@string/navi_map"/>
+
+    </group>
+
+    <item android:title="@string/group_help">
+        <menu>
+            <item
+                android:icon="@drawable/ic_tutorials"
+                android:title="@string/navi_tutorials"
+                android:id="@+id/menu_navi_tutorials"/>
+
+            <item android:title="Gửi phản hồi" android:icon="@drawable/ic_feedback"/>
+
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#95231f20">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_dialog_sos"
+        android:padding="@dimen/padding_16">
+
+        <TextView
+            android:id="@+id/tv_id_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_state_tree"
+            android:layout_alignRight="@+id/tv_state_tree"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingLeft="@dimen/size_10"
+            android:paddingRight="@dimen/size_10"
+            android:paddingTop="@dimen/padding_5"
+            android:text="Mã cây: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:imeOptions="actionDone"
+            android:id="@+id/edt_id_tree"
+            android:layout_width="@dimen/size_120"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_id_tree"
+            android:layout_alignTop="@+id/tv_id_tree"
+            android:layout_marginLeft="@dimen/padding_5"
+            android:layout_toRightOf="@+id/tv_id_tree"
+            android:background="@drawable/bg_scroll"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding_5"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_state_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_id_tree"
+            android:layout_marginTop="@dimen/padding_5"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingLeft="@dimen/size_10"
+            android:paddingRight="@dimen/size_10"
+            android:paddingTop="@dimen/padding_5"
+            android:text="Tình trạng cây: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinner_state_tree"
+            android:layout_width="@dimen/size_100"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_state_tree"
+            android:layout_alignLeft="@+id/edt_id_tree"
+            android:layout_alignRight="@+id/edt_id_tree"
+            android:layout_alignTop="@+id/tv_state_tree"
+            android:layout_toRightOf="@+id/tv_state_tree"
+            android:visibility="visible" />
+
+        <RadioGroup
+            android:visibility="gone"
+            android:id="@+id/rd_state_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_state_tree"
+            android:layout_alignRight="@+id/edt_id_tree"
+            android:layout_below="@+id/tv_state_tree"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dsadas"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dsadas"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dsadas"
+                android:textSize="12sp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinner_state_tree"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="@dimen/padding_5"
+            android:paddingLeft="@dimen/size_10"
+            android:paddingRight="@dimen/size_10"
+            android:paddingTop="@dimen/padding_5"
+            android:text="Mô tả: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:imeOptions="actionDone"
+            android:id="@+id/edt_des"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size_80"
+            android:layout_alignLeft="@+id/tv_des"
+            android:layout_alignRight="@+id/spinner_state_tree"
+            android:layout_below="@+id/tv_des"
+            android:layout_marginTop="@dimen/padding_5"
+            android:background="@drawable/bg_scroll"
+            android:gravity="top|left"
+            android:padding="@dimen/padding_5" />
+
+
+        <FrameLayout
+
+            android:id="@+id/fr_cam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size_20"
+            android:layout_toRightOf="@+id/edt_id_tree">
+
+            <ImageView
+                android:id="@+id/img_tree"
+                android:layout_width="@dimen/size_100"
+                android:layout_height="@dimen/size_100"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/edt_id_tree"
+                android:src="@drawable/ic_camera" />
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/size_110"
+                android:text="Gửi" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/fr_cam"
+            android:src="@drawable/ic_close" />
+
+    </RelativeLayout>
+
+</FrameLayout>

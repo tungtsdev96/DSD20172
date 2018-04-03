@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DSD</string>
+
+    <string name="username">Tên tài khoản</string>
+    <string name="pass">Mật khẩu</string>
+    <string name="forget_pass">Quên mật khẩu</string>
+    <string name="login">ĐĂNG NHẬP</string>
+    <string name="navi_home">Trang chủ</string>
+    <string name="navi_account">Quản lý tài khoản</string>
+    <string name="navi_history_work">Lịch sử làm việc</string>
+    <string name="navi_map">Bản đồ tưới cây</string>
+    <string name="navi_tutorials">Hướng dẫn sử dụng</string>
+    <string name="group_help">HỖ TRỢ</string>
+    <string name="navigation_drawer_open">open_menu</string>
+    <string name="navigation_drawer_close">close_menu</string>
+
+    <string name="id_tree" formatted="false">Mã cây : %d</string>
+    <string name="name_tree" formatted="false">Tên cây : %s</string>
+    <string name="standard_humidity" formatted="false">Độ ẩm thường : %d%%</string>
+    <string name="standard_temperature" formatted="false">Nhiệt độ thường : %dC</string>
+
+</resources>

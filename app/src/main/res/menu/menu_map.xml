@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_current_location"
+        android:title="Vị trí hiện tại"
+        android:icon="@drawable/ic_curent_location">
+    </item>
+    <item android:title="CHỈ ĐƯỜNG">
+        <menu>
+            <item
+                android:icon="@drawable/ic_water_source"
+                android:id="@+id/menu_goto_watersource"
+                android:title="Đi lấy nước"/>
+            <item
+                android:icon="@drawable/ic_direction"
+                android:id="@+id/menu_goto_water_tree"
+                android:title="Tưới cây"/>
+        </menu>
+    </item>
+
+    <item android:title="HỖ TRỢ">
+        <menu>
+            <item
+                android:icon="@drawable/ic_sos"
+                android:id="@+id/menu_sos"
+                android:title="Gửi báo cáo về cây"/>
+            <item
+                android:icon="@drawable/ic_call"
+                android:id="@+id/menu_call"
+                android:title="Gọi điện trực tiếp"/>
+        </menu>
+    </item>
+
+</menu>

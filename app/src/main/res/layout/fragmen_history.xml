@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/spinner_date"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_40"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/spinner_date"
+        android:id="@+id/rcv_history_work"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

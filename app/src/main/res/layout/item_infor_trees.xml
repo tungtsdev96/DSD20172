@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/padding_5"
+    android:paddingBottom="@dimen/padding_5"
+    android:background="@drawable/bg_item_infor_tree"
+    android:clickable="true">
+
+    <ImageView
+        android:layout_alignTop="@+id/ll_infor"
+        android:layout_alignBottom="@+id/ll_infor"
+        android:id="@+id/img_tree"
+        android:layout_centerVertical="true"
+        android:layout_width="@dimen/size_120"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:id="@+id/ll_infor"
+        android:padding="@dimen/size_10"
+        android:layout_toRightOf="@+id/img_tree"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="sads"
+            android:id="@+id/tv_id_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="16sp"
+            android:text="sads"
+            android:id="@+id/tv_name_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="16sp"
+            android:text="sads"
+            android:id="@+id/tv_standard_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="16sp"
+            android:text="sads"
+            android:id="@+id/tv_id_standard_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

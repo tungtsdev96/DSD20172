@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:background="@color/colorPrimary"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+        </android.support.v7.widget.Toolbar>
+
+        <ImageView
+            android:layout_marginTop="@dimen/size_80"
+            android:layout_marginLeft="@dimen/padding_16"
+            android:layout_marginRight="@dimen/padding_16"
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/size_20"
+            android:layout_marginLeft="@dimen/padding_16"
+            android:layout_marginRight="@dimen/padding_16"
+            android:layout_below="@+id/logo"
+            android:paddingBottom="@dimen/padding_5"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/ll_auth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:paddingTop="@dimen/padding_5"
+                android:id="@+id/text_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:text="tungts"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:id="@+id/edt_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/username" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:textColor="@color/colorred"
+                    android:id="@+id/tv_error_username"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:textSize="8sp"
+                    android:text="Vui lòng nhập vào tên tài kkhoản"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginTop="@dimen/padding_5"
+                android:id="@+id/text_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:text="tungts"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:id="@+id/edt_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pass" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:textColor="@color/colorred"
+                    android:id="@+id/tv_error_pass"
+                    android:layout_marginLeft="@dimen/padding_5"
+                    android:textSize="8sp"
+                    android:text="Vui lòng nhập vào tên tài kkhoản"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/padding_5" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardlogin"
+            android:clickable="true"
+            android:layout_marginLeft="@dimen/padding_16"
+            android:layout_marginRight="@dimen/padding_16"
+            android:layout_marginTop="@dimen/size_25"
+            android:layout_below="@+id/ll_auth"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_45"
+            app:cardCornerRadius="2dp"
+            app:cardBackgroundColor="@color/color_btn_login">
+
+            <TextView
+                android:id="@+id/btn_login"
+                android:clickable="true"
+                android:background="@drawable/bg_btn_login"
+                android:text="@string/login"
+                android:textColor="@color/colorwhite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="@dimen/padding_15"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/cardlogin"
+            android:text="@string/forget_pass"
+            android:id="@+id/tv_forget_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_login_social"
+            android:layout_marginTop="@dimen/padding_15"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_forget_pass"
+            android:text="Hoặc đăng nhập với"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
