@@ -19,12 +19,21 @@ public class ShowDirection {
         void onDone();
     }
 
+    private static boolean isShowing = false;
     private ShowDirectionDone onShowDirectionDone;
     private static ShowDirection showDirection;
     Handler handler;
 
     private ShowDirection(){
         handler = new Handler();
+    }
+
+    public static boolean isShowing() {
+        return isShowing;
+    }
+
+    public void setShowing(boolean showing) {
+        isShowing = showing;
     }
 
     public static ShowDirection getInstance(ShowDirectionDone onShowDirectionDone){
@@ -44,8 +53,12 @@ public class ShowDirection {
                 mapActivity.notifyAdapter(arrYoaDo.get(dem).x, arrYoaDo.get(dem).y, type);
                 dem--;
                 handler.postDelayed(this,200);
+                setShowing(true);
                 if (dem == 0) {
-                    if (onShowDirectionDone != null) onShowDirectionDone.onDone();
+                    if (onShowDirectionDone != null) {
+                        setShowing(false);
+                        onShowDirectionDone.onDone();
+                    };
                     handler.removeCallbacks(this);
                     return;
                 }

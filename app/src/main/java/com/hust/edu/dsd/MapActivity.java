@@ -72,6 +72,7 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, N
     int number_tree_registration, number_tree_irrigated, number_tree_irrigated_in_date;
     ArrayList<Trees> list_trees;
     boolean isWatering;
+    Trees treeWatering;
 
     //water station
     EditText edt_input_water;
@@ -219,6 +220,9 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, N
     boolean isRegis;
     @Override
     public void onClick(View view) {
+        if (ShowDirection.isShowing()){
+            return;
+        }
         switch (view.getId()) {
             case R.id.btn_up:
                 moveUp();
@@ -265,8 +269,8 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, N
             @Override
             public void onSuccess(ResponseBody result) {
                 updateStateForTreeWater(trees);
-                Toast.makeText(MapActivity.this, "Da tuoi cay " + trees.getX() + "," + trees.getY(), Toast.LENGTH_SHORT).show();
-
+//                Toast.makeText(MapActivity.this, "Da tuoi cay " + trees.getTree_name() + " " + , Toast.LENGTH_SHORT).show();
+                showAlert("Thông báo", "Đã tưới cây " + trees.getTree_name() + " Lượng nước: " + trees.getCurrent_water() + "l");
             }
         });
     }
@@ -417,6 +421,9 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, N
     ///navi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (ShowDirection.isShowing()){
+            return true;
+        }
         closeDrawer();
         switch (item.getItemId()) {
             case R.id.menu_current_location:
@@ -484,11 +491,20 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, N
 
     @Override
     public void cordinatorClick(int x, int y, int type) {
+        if (ShowDirection.isShowing()){
+            Log.e("direction","ddd");
+            return;
+        }
         switch (type) {
             case Constants.TREES:
                 Toast.makeText(this, "Toa do cay" + x + " " + y, Toast.LENGTH_SHORT).show();
                 break;
             case Constants.TREE_REGISTRATION:
+                ///check truong hop tuoi dung cay co stt can tuoi;
+                if (treeWatering.getX() != x || treeWatering.getY() != y){
+                    return;
+                }
+
                 notifyAdapter(currentX,currentY,oldType);
                 oldType = Constants.TREE_REGISTRATION;
                 currentY = y;
@@ -496,7 +512,7 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, N
                 waterTheTrees();
                 break;
             case Constants.START:
-                Toast.makeText(this, "Dang o" + x + " " + y, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Đang ở" + x + " " + y, Toast.LENGTH_SHORT).show();
                 break;
             case Constants.TREE_IRRIGATED:
                 Toast.makeText(this, "Cay da dc tuoi", Toast.LENGTH_SHORT).show();
@@ -585,15 +601,18 @@ public class MapActivity extends BaseActivity implements View.OnClickListener, N
 //        }
     }
 
+
     private void showDirectionToTree(final Trees tree) {
         //current -> tree1
+        treeWatering = tree;
         SearchDirection searchDirection = new SearchDirection(currentX, currentY, tree.getX(), tree.getY(), Matrix);
         searchDirection.searchDirection();
         lastDirection.addAll(searchDirection.getDuongDi());
         ShowDirection.getInstance(new ShowDirection.ShowDirectionDone() {
             @Override
             public void onDone() {
-                Toast.makeText(MapActivity.this, "Hãy đến tưới cây " + tree.getTree_name(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MapActivity.this, "Hãy đến tưới cây " + tree.getTree_name(), Toast.LENGTH_SHORT).show();
+                showAlert("Thông báo", "Hãy đến tưới cây " + tree.getTree_name() + "\n Tọa độ: (" + tree.getX() + "," + tree.getY()+ ")");
             }
         }).showDirection(lastDirection,Constants.DIRECTION,MapActivity.this);
     }
